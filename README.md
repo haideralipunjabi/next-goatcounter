@@ -22,12 +22,12 @@ yarn add next-goatcounter
 
 Now, in `_app.js`
 
-```
+```js
 import { GCScript } from "goatcounter-nextjs";
 ```
 and in `return`
 
-```
+```js
     <GCScript siteUrl={"https://site.goatcounter.com/count"} />
     <Component {...pageProps} />
 ```
@@ -37,11 +37,10 @@ _Note: `GCScript` supports `scriptSrc` parameter to specify self hosted count.js
 To send custom events to GoatCounter,
 
 first
-```
+```js
 import { GCEvent } from "goatcounter-nextjs";
-
 ```
 then use `GCEvent` like this
-```
+```js
 GCEvent(path,title);
 ```
