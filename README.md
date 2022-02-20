@@ -23,7 +23,7 @@ yarn add next-goatcounter
 Now, in `_app.js`
 
 ```js
-import { GCScript } from "goatcounter-nextjs";
+import { GCScript } from "next-goatcounter";
 ```
 and in `return`
 
@@ -38,9 +38,9 @@ To send custom events to GoatCounter,
 
 first
 ```js
-import { GCEvent } from "goatcounter-nextjs";
+import { GCEvent } from "next-goatcounter";
 ```
 then use `GCEvent` like this
 ```js
-GCEvent(path,title);
+GCEvent(path, title);
 ```
