@@ -1,4 +1,4 @@
-export function GCEvent(path, title) {
+export function GCEvent(path:string , title:string ) {
     if (!window.goatcounter) return;
     window.goatcounter.count({
       path: path,

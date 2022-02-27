@@ -2,7 +2,13 @@ import { useRouter } from "next/router";
 import { useEffect } from "react";
 import Script from "next/script";
 
-export function GCScript({ siteUrl, scriptSrc }) {
+declare global {
+  interface Window {
+    goatcounter: any
+  }
+}
+
+export const GCScript: React.FC<{siteUrl: string, scriptSrc: string}>= ({ siteUrl, scriptSrc }) => {
   const router = useRouter();
   useEffect(() => {
     const handleRouteChange = (url) => {
