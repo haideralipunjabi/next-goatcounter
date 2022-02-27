@@ -1,11 +1,15 @@
 {
   "name": "next-goatcounter",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "GoatCounter plugin for Next.js projects",
-  "source": "src/index.js",
+  "source": "src/index.ts",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "/dist"
+  ],
   "scripts": {
-    "build": "del dist/* && babel src -d dist"
+    "build": "del dist/* && tsc"
   },
   "author": {
     "name": "Haider Ali Punjabi",
