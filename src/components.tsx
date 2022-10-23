@@ -8,7 +8,7 @@ declare global {
   }
 }
 
-export const GCScript: React.FC<{siteUrl: string, scriptSrc: string}>= ({ siteUrl, scriptSrc }) => {
+export const GCScript: React.FC<{siteUrl: string, scriptSrc?: string}>= ({ siteUrl, scriptSrc }) => {
   const router = useRouter();
   useEffect(() => {
     const handleRouteChange = (url) => {
