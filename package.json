@@ -1,6 +1,6 @@
 {
   "name": "next-goatcounter",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "GoatCounter plugin for Next.js projects",
   "source": "src/index.ts",
   "main": "dist/index.js",
@@ -30,21 +30,21 @@
   "homepage": "https://github.com/haideralipunjabi/next-goatcounter",
   "license": "MIT",
   "peerDependencies": {
-    "next": "^8.1.1-canary.54 || >=9.0.0",
+    "next": ">=9.0.0",
     "react": ">=16.0.0",
     "react-dom": ">=16.0.0"
   },
   "devDependencies": {
+    "@babel/cli": "^7.16.8",
     "@babel/core": "^7.16.7",
     "@babel/preset-env": "^7.16.8",
+    "@types/node": "^14.0.0",
     "@types/react": "^17.0.39",
     "@types/react-dom": "^17.0.11",
     "del-cli": "^4.0.1",
     "typescript": "^4.5.5"
   },
-  "dependencies": {
-    "@babel/cli": "^7.16.8"
-  },
+  "dependencies": {},
   "funding": "https://buymeacoffee.com/HAliPunjabi",
   "repository": {
     "type": "git",
