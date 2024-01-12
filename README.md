@@ -20,16 +20,20 @@ or
 yarn add next-goatcounter
 ```
 
-Now, in `_app.js`
+Now, in `app/layout.js`
 
 ```js
 import { GCScript } from "next-goatcounter";
 ```
 and in `return`
 
-```js
+```html
+    <body>
     <GCScript siteUrl={"https://site.goatcounter.com/count"} />
-    <Component {...pageProps} />
+    {
+        children
+    }
+    </body>
 ```
 _Note: `GCScript` supports `scriptSrc` parameter to specify self hosted count.js location_
 
