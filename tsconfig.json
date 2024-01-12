@@ -4,8 +4,16 @@
     "allowJs": true,
     "target": "es5",
     "esModuleInterop": true,
-    "jsx": "preserve",
+    "jsx": "react-jsx",
     "declaration": true,
+    "rootDir": "src",
+    "skipLibCheck": true
   },
-  "include": ["./src/**/*"]
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }

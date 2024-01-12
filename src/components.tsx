@@ -1,6 +1,6 @@
-import { useRouter } from "next/router";
-import { useEffect } from "react";
-import Script from "next/script";
+import { Suspense } from "react";
+import { GCScriptBase } from "./gcscript";
+
 
 declare global {
   interface Window {
@@ -8,26 +8,11 @@ declare global {
   }
 }
 
-export const GCScript: React.FC<{siteUrl: string, scriptSrc?: string}>= ({ siteUrl, scriptSrc }) => {
-  const router = useRouter();
-  useEffect(() => {
-    const handleRouteChange = (url) => {
-      if (!window.goatcounter) return;
-      window.goatcounter.count({
-        path: url.slice(1),
-        event: false,
-      });
-    };
-    router.events.on("routeChangeComplete", handleRouteChange);
-    return () => {
-      router.events.off("routeChangeComplete", handleRouteChange);
-    };
-  }, [router.events]);
+export const GCScript: React.FC<{ siteUrl: string, scriptSrc?: string }> = ({ siteUrl, scriptSrc }) => {
+
   return (
-    <Script
-      data-goatcounter={siteUrl}
-      src={scriptSrc ?? "//gc.zgo.at/count.js"}
-      strategy="afterInteractive"
-    />
+    <Suspense>
+      <GCScriptBase siteUrl={siteUrl} scriptSrc={scriptSrc} />
+    </Suspense>
   );
 }
