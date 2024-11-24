@@ -1,6 +1,6 @@
 {
   "name": "next-goatcounter",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "GoatCounter plugin for Next.js projects",
   "source": "src/index.ts",
   "main": "dist/index.js",

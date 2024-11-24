@@ -38,6 +38,38 @@ and in `return`
 _Note: `GCScript` supports `scriptSrc` parameter to specify self hosted count.js location_
 
 ## Usage
+
+### Display View Count
+
+The package provides two components - `ViewCount` and `TotalViews` to show no. of views from Goat Counter.
+
+```js
+    import { ViewCount, TotalViews } from 'next-goatcounter';
+
+    <ViewCount /> // Displays non-unique views of current page
+    <TotalViews /> // Displays non-unique views of the entire webstie
+```
+Both `ViewCount` and `TotalViews` have the `fallback` optional prop to display a fallback while content is loading. [Read More](https://react.dev/reference/react/Suspense#displaying-a-fallback-while-content-is-loading)
+
+```js
+    import { ViewCount, TotalViews } from 'next-goatcounter';
+
+    <ViewCount fallback={<>Loading...</>} />
+
+```
+
+`ViewCount` also has the optional `path` prop to change the path for which view count is displayed. 
+
+```js
+    import { ViewCount, TotalViews } from 'next-goatcounter';
+
+    <ViewCount path="/posts/123" />
+```
+
+There is also a `getViewCount()` function that you can use for more customisation. Ensure that it is used in a client component only.
+
+
+### Custom Events
 To send custom events to GoatCounter,
 
 first

@@ -17,7 +17,12 @@ export const GCScriptBase: React.FC<{ siteUrl: string, scriptSrc?: string }> = (
             event: false,
         });
     }, [pathname, searchParams])
-
+    useEffect(() => {
+        if (siteUrl.endsWith("/count")) {
+            siteUrl = siteUrl.substring(0, siteUrl.length - 6)
+        }
+        window.localStorage.setItem("siteUrl", siteUrl)
+    }, [])
     return (
         <Script
             data-goatcounter={siteUrl}
